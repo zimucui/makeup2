@@ -1,0 +1,60 @@
+<template name="quiz1">
+  {{#if currentUser}}
+    <div class="row bg-info">
+      <div class="col-md-7 col-md-offset-2">
+        <h1>Hillary Clinton</h1>
+        <ul>
+          <li>
+            Hillary Clinton's website is
+            <a href="https://www.hillaryclinton.com/">https://www.hillaryclinton.com/</a>
+          </li>
+          <li> The DNC's website is
+            <a href="https://www.democrats.org/">https://www.democrats.org/</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-md-offset-1 bg-primary">
+        <img src="images/hillary.jpg" width="100%">
+     </div>
+   </div>
+   <div class="row bg-warning">
+     <div class="col-md-6 col-md-offset-3">
+       <table class="table table-bordered table-striped bg-success">
+         <thead>
+           <tr><th>Party</th><th>Candidate</th></tr>
+         </thead>
+         <tbody>
+           <tr><td>Democratic</td><td>Hillary Clinton</td></tr>
+           <tr><td>Republican</td><td>Donald Trump</td></tr>
+           <tr><td>Green</td><td>Jill Stein</td></tr>
+           <tr><td>Libertarian</td><td>Gary Johnson</td></tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+  <div class="row bg-danger">
+       <div class="col-md-2">
+         <img src="images/trump.jpg" width="100%">
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+       <h1>Donald Trump</h1>
+       <ul>
+         <li>
+           Donald Trump's website is
+           <a href="https://www.donaldjtrump.com/">https://www.donaldjtrump.com/</a>
+         </li>
+         <li> The RNC's website is
+           <a href="https://www.gop.com/">https://www.gop.com/</a>
+         </li>
+       </ul>
+      </div>
+  </div>
+
+
+
+
+  {{else}}
+     You better log in!!!
+  {{/if}}
+
+</template>

@@ -1,0 +1,82 @@
+<template name="quiz2">
+ <div class="jumbotron">
+
+  <h1>JBS Showcase Reviews</h1>
+  <p>Give feedback to the terms!</p>
+  </div>
+  {{#if currentUser}}
+  {{> donationForm}}
+
+<h1>Reviews</h1>
+Show feedback for
+<select class="js-sort">
+<option value="All">All</option>
+  <option value="TraWorld">TraWorld</option>
+  <option value="TalkBoard">TalkBoard</option>
+  <option value="ChefsAssistant">ChefsAssistant</option>
+  <option value="Epoch">Epoch</option>
+  <option value="VirtualPet">VirtualPet</option>
+  <option value="PlanDeis">PlanDeis</option>
+ </select>
+
+<table class="table table-bordered">
+  <thead>
+    <tr><th>Reviewer</th><th>Reviewee</th><th>Rating</th><th>Comment</th><th>delete?</th></tr>
+  </thead>
+{{#each d in donations}}
+<tbody>
+{{> donationRow d=d}}
+</tbody>
+{{/each}}
+</table>
+  {{/if}}
+</template>
+
+
+<template name="donationForm">
+  <h1>Provide FeedBack</h1>
+  Team being reviewed:
+  <select class="js-who">
+  <option value="" selected disabled>All</option>
+    <option>TraWorld</option>
+    <option>TalkBoard</option>
+    <option>ChefsAssistant</option>
+    <option>Epoch</option>
+    <option>VirtualPet</option>
+    <option>PlanDeis</option>
+    
+  </select>
+  <br>
+  Name of reviewer: <input type="text" class="js-name"><br>
+  Rating (1=lo, 5=high):
+  <select class="js-rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <br>
+  Give some feedback here:
+  <br>
+  <textarea rows="5" cols="80" class="feedback"></textarea>
+  <br>
+  <button class="js-share">Submit feedback</button>
+</template>
+
+
+
+
+
+<template name="donationRow">
+   <tr>
+     <td>{{d.name}} </td>
+     <td>{{d.team}}</td>
+     <td>{{d.rating}} </td>
+     <td> {{d.comment}}</td>
+     <td>
+       <span class="js-delete-comment glyphicon glyphicon-remove" aria-hidden="true">
+       </span>
+     </td>
+   </tr>
+</template>
